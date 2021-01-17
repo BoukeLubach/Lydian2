@@ -1,0 +1,104 @@
+
+{% extends "base_min.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block mainpage %}
+<div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+
+    <section id="section-hero" class="full-height vertical-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 wow fadeInRight" data-wow-delay=".5s">
+
+                    <div class="spacer-10"></div>
+                    <h1>Home</h1>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Ut enim ad minim veniam.</p>
+                    <div class="spacer-20"></div>
+                    <a class="btn-custom" href="#">Read More</a>&nbsp;
+                    <a class="btn-custom bg-color-2" href="#">Study Case</a>
+                    <div class="mb-sm-30"></div>
+                </div>
+                <div class="col-lg-7 wow fadeInLeft" data-wow-delay=".5s">
+                    <img src="{% static 'images/misc/3.png' %}" class="img-fluid" alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-highlight" class="no-top" data-bgimage="url({%static '' %}) top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="text-center">
+                        <h2><span class="uptitle id-color">Our Services</span>How does it work?</h2>
+                        <div class="spacer-20"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb30 wow fadeInRight" data-wow-delay="0s">
+                    <div class="f-box f-icon-left f-icon-rounded">
+                        <i class="fa fa-laptop bg-color-2 text-light"></i>
+                        <div class="fb-text">
+                            <h4></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb30 wow fadeInRight" data-wow-delay=".25s">
+                    <div class="f-box f-icon-left f-icon-rounded">
+                        <i class="fa fa-paper-plane-o bg-color-3 text-light"></i>
+                        <div class="fb-text">
+                            <h4>Email Marketing</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb30 wow fadeInRight" data-wow-delay=".5s">
+                    <div class="f-box f-icon-left f-icon-rounded">
+                        <i class="fa fa-line-chart bg-color text-light"></i>
+                        <div class="fb-text">
+                            <h4>Digital Analytics</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb30 wow fadeInRight" data-wow-delay="0s">
+                    <div class="f-box f-icon-left f-icon-rounded">
+                        <i class="fa fa-object-group bg-color-2 text-light"></i>
+                        <div class="fb-text">
+                            <h4>Visual Editor</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb30 wow fadeInRight" data-wow-delay=".25s">
+                    <div class="f-box f-icon-left f-icon-rounded">
+                        <i class="fa fa-hdd-o bg-color-3 text-light"></i>
+                        <div class="fb-text">
+                            <h4>Backup &amp; Security</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb30 wow fadeInRight" data-wow-delay=".5s">
+                    <div class="f-box f-icon-left f-icon-rounded">
+                        <i class="fa fa-comments-o bg-color text-light"></i>
+                        <div class="fb-text">
+                            <h4>IT Consultancy</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock mainpage %}

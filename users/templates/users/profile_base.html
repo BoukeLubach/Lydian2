@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="pricing-s1 mb30">
+                            <div class="top">
+                                <h2>{{ user.username }}</h2>
+                                <p class="plan-tagline">Profile page</p>
+                            </div>
+
+                            <div class="bottom">
+                                <ul class="list-group">
+                                    <a href="{% url 'profile'%}">
+                                        <li class="list-group-item list-group-item-action {{ link_class.profile }}"><i class="fa fa-address-card"></i>Profile page</li>
+                                    </a>
+                                    <a href="{% url 'account-view'%}">
+                                        <li class="list-group-item list-group-item-action {{ link_class.account }}"><i class="fa fa-wrench"></i>Account settings</li>
+                                    </a>
+                                    <a href="{% url 'password-change-view' %}">
+                                        <li class="list-group-item list-group-item-action {{ link_class.password }}"><i class="fa fa-lock"></i>Change password</li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% block profile %} {% endblock profile %}
+
+
+                </div>
+
+
+{% endblock content %}

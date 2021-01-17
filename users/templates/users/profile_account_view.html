@@ -1,0 +1,19 @@
+{% extends "users/profile_base.html" %} {% load static %} {% block profile %}
+
+<div class="col-md-6 offset-0 my-3">
+    <div class="justify-content-center ml-2 border-bottom  my-3">
+        Account
+    </div>
+    <table class="table table-borderless">
+        <tbody>
+            <tr>
+                <td class="text-right">Email address: </td>
+                <td class="text-left">{{ user.email }}</td>
+                <td><a class="ml-2" href="{% url 'account-edit' user.id %}">Edit</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock profile %}

@@ -1,0 +1,28 @@
+{% extends "base_min.html" %}
+{% load static %}
+
+{% block mainpage %}
+<!-- content begin -->
+<div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+    <section class="mb-10" id="subheader" data-bgimage="url({%static 'images/background/1b.png' %}) bottom">
+        <div class="center-y relative text-center" data-scroll-speed="4">
+            <div class="container">
+
+                {% block content %}
+
+                {% endblock %}
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+
+    </section>
+    <!-- section close -->
+
+
+</div>
+<!-- content close -->
+
+{% endblock %}
