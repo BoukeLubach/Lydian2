@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="no-bottom" id="content">
+    <div id="top"></div>
+
+    <section>
+
+        <div class="container">
+            <div class="col-md-10 offset-1">
+
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        {{ tsgraph|safe }}
+                        <p>
+                            Plotting multiple timeseries in one figure can become confusing, especially when analysing
+                            entire production processes or sections. It is not uncommon to have 20 or more measurements
+                            for a single process unit (the current example showed one distillation column with 8 logged
+                            datapoints and the figure already gets messy).
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 offset-1">
+                        {{ ssgraph|safe }}
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <p>
+                            Alternatively, you can change the x-axis and remove the time component, after all, the
+                            specific date and time something occurs is not always insightful when looking for
+                            anomalies. If you already know an event has at a specific time you are already aware of
+                            possible anomalies. The figure shown here plots the feed flow on the x-axis and the
+                            reflux flow on the y-axis. It immediately becomes clear that the dots group in three main
+                            categories, it seems that this is a common operating mode for the distillation column, at
+                            least when it comes to the relationship between reflux flow and feed flow.
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            The current graph shows 2 of the measured properties of the process, a 2d analysis of the
+                            process omitting the other 6. It is possible to add other process parameters by changing:
+                        <ul>
+                            <li>Color</li>
+                            <li>Marker size</li>
+                            <li>Opacity</li>
+                            <li>Figure shape</li>
+                        </ul>
+                        There a few more creative ways to add more process parameters, increasing the information
+                        density of the graph. Unfortunately, humars are no very good at processing these figures,
+                        typically 3-4 process properties can be included in one graph
+                        before it gets confusing for most people.
+
+                        The solution? Plot more graphs. Now this might sound like a obvious, or completely stupid, which
+                        it is for many reasons. However, there are some benefits about plotting multiple similar graphs
+                        of the same production process. For one, it gives a nice
+                        overview of the entire process, and when compared month after
+                        month gives the user a decent feel for the process.
+
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-4">
+                        {{ graph|safe }}
+                    </div>
+                    <div class="col-4">
+                        {{ graph2|safe }}
+                    </div>
+                    <div class="col-4">
+                        {{ graph3|safe }}
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-4">
+                        {{ graph4|safe }}
+                    </div>
+                    <div class="col-4">
+                        {{ graph5|safe }}
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        {{ graph6|safe }}
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+
+</div>
+{% endblock content %}

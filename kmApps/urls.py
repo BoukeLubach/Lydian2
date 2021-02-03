@@ -1,7 +1,8 @@
 from django.urls import path
-from .dash_apps import kmDistillation
-from .views import kmDistillationView
+
+from .views import introPageView
 
 urlpatterns = [
-    path('kmDistillation/', kmDistillationView, name='km-distillation'),
+    path('intro/', introPageView, name='intro-page'),
+    # path('kmDistillation/', kmDistillationView, name='km-distillation'),
 ]
