@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('users.urls')),
     path('', include('kmApps.urls')),
+    path('', include('file_upload.urls')),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
 ]
