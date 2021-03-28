@@ -1,4 +1,4 @@
-Timestamp;6210FIC1601_Data_PV_Input_Manual;6210FT0020_Data_PV_Input_Manual;6210FT0030_Data_PV_Input_Manual;6210FT0031_Data_PV_Input_Manual
+Timestamp;idf_column1;idf_column1;idf_column3;idf_column4
 1/1/2018 08:56:51.000;33.53234321;0.610400561;34.20247477;0
 1/1/2018 09:56:51.000;0;0;0;0
 1/1/2018 10:56:51.000;0.024695378;0;0;0
