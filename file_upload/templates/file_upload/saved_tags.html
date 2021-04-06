@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
+<link href="{% static 'file_upload/dftable.css' %}" rel="stylesheet" type="text/css" />
 
 
 <div class="no-bottom no-top" id="content">
@@ -13,7 +15,7 @@
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
                         <div class="col-md-12 text-center">
-                            <h1>Upload csv</h1>
+                            <h1>Saved tags</h1>
                             <!-- <p>Awsome Page Teaser Here</p> -->
                         </div>
                     </div>
@@ -25,24 +27,31 @@
 
     <section class="no-top mt-4">
         <div class="container">
+            {{ skiprows }}
 
             <div class="content-section col-md-4 offset-4 mt-4">
-                <fieldset>
-                    <form enctype="multipart/form-data" method="POST">
-                        {% csrf_token %}
-                        <fieldset class="form-group">
-        
-                            {{ form|crispy }}
-                        </fieldset>
-                        <div class="form-group">
-                            <button class="btn btn-outline-info" type="submit">Save</button>
-                        </div>
-                    </form>
 
-                </fieldset>
+                    <table class="table">
+
+                        <tr>
+                            <th>Tagname</th>
+                            <th>Batch Id</th>
+                        </tr>
+                        {% for tag in stored_tags %}
+                        <tr>
+                            <td>{{ tag.name }}</td>
+                            <td>{{ tag.batch.id }}</td>
+                        </tr>
+                        {% endfor %}
+                      </table>
+                      <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Save</button>
+                    </div>
+            </div>
 
 
     </section>
 </div>
+
 
 {% endblock content %}

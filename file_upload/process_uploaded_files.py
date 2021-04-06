@@ -4,7 +4,7 @@ from .models import Tagmodel, Datafile
 
 
 
-def handle_uploaded_file(uploaded_file, skiprows, dayfirst):
+def handle_uploaded_file(uploaded_file):
     if uploaded_file.name.endswith('.csv'):
 
         file_instance = Datafile(status= "file stored", csvfile=uploaded_file)
