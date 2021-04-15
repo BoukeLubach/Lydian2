@@ -7,8 +7,8 @@ import plotly.offline as opy
 import plotly.graph_objs as go
 from os import path
 from file_upload.models import Tagmodel
-
-
+from django.conf import settings
+import pandas as pd
 
 def introPageView(request):
     file_path = path.join(path.dirname(__file__), 'dash_apps/data/distillationcolumn_okt.csv')
@@ -71,13 +71,48 @@ def introPageView(request):
 
 def kmeans_analysis_view(request):
 
-    if request.method =="POST":
-        print(request.POST.get('tagselector'))
-
     available_tags = Tagmodel.objects.all()
     
     context = {
         'available_tags': available_tags,
     }
 
+    if request.method =="POST":
+
+        selected_tagname = request.POST.get('tagselector')
+        context['input_field_data'] = selected_tagname
+        
+        tag = Tagmodel.objects.filter(name=selected_tagname).first()
+        file_name = tag.batch.datafile.csvfile.name
+        print(file_name)
+        file_path = path.join(settings.MEDIA_ROOT, file_name)
+
+        df = pd.read_csv(file_path, sep=';')
+
+        trace1 = go.Scatter(
+            x=df.index, 
+            y=df[selected_tagname], 
+            marker={'color': '#000518', 'size': 6, 'opacity': 0.7},
+            mode="markers",  
+            name='1st Trace'
+        )
+
+        data=go.Data([trace1])
+        layout=go.Layout(
+            # title="Meine Daten", 
+            xaxis={'title': 'xaxis'}, 
+            yaxis={'title': 'yaxis'},
+            margin=dict(
+                t=10,
+                l=50,
+                b=50,
+                r=10
+            ))
+
+
+        fig = go.Figure(data = data, layout=layout)
+
+        tsgraph = fig.to_html(full_html=False, config=dict(displayModeBar=False), default_height='450px', default_width='100%')
+        context['tsgraph'] = tsgraph
+    
     return render(request, 'kmApps/kmeans_analysis.html', context = context)

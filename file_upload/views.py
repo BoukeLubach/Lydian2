@@ -49,7 +49,14 @@ def upload_csv(request):
         form = UploadForm()
     return render(request, 'file_upload/upload_csvfile.html', {'form': form})
 
+def file_listview(request):
 
+    files = Datafile.objects.all()
+    context={
+        'files': files,
+    }
+
+    return render(request, 'file_upload/file_listview.html', context=context)
 
 def dataframe_preview(request, pk):
 
@@ -81,9 +88,12 @@ def dataframe_preview(request, pk):
         form = CsvProcessSettingsForm()
         dftable = df.head().to_html()
 
-    
+    data = df.head(5).transpose().to_dict()
+
     context = {
         "dftable" : dftable,
+        'data': data,
+        'dfcolumns': df.columns,
         "form": form,
     }
     return render(request, 'file_upload/dataframe_preview.html', context = context)

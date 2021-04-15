@@ -40,7 +40,7 @@
                             <option value="{{ tag.name }}">{{ tag.name }}</option>
                             {% endfor %}
                         </datalist>
-
+                        
 
                         <div class="form-group">
                             <button class="btn btn-outline-info" type="submit">Select</button>
@@ -48,7 +48,8 @@
                     </form>
 
                 </fieldset>
-
+                {{ input_field_data }}
+                {{ tsgraph|safe }}
 
     </section>
 </div>
