@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<link href="{% static 'file_upload/dftable.css' %}" rel="stylesheet" type="text/css" />
+
+
+<div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+
+    <!-- section begin -->
+    <section id="subheader" class="no-bottom" data-bgimage="url(images/background/5.png) bottom">
+        <div class="center-y relative text-center" data-scroll-speed="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="col-md-12 text-center">
+                            <h1>Suggested tags</h1>
+                            <!-- <p>Awsome Page Teaser Here</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section close -->
+
+    <section class="no-top mt-4">
+        <div class="container">
+            {{ skiprows }}
+
+            <div class="content-section col-md-4 offset-4 mt-4">
+                <form method="POST">
+                    {% csrf_token %}
+                    <table class="table text-center">
+
+                        <tr>
+                          <th>Tagname</th>
+                          <th>Index</th>
+                          <th>Select tags to save</th>
+
+                        </tr>
+                        {% for tag in identified_tags %}
+                        <tr>
+                          <td>{{ tag.name }}</td>
+                          <td>{{ forloop.counter }}</td>
+                          <td><input type="checkbox" name="tag{{ forloop.counter }}" class="checkboxinput form-check-input"></td>
+                          
+                        </tr>
+                        {% endfor %}
+                      </table>
+
+                      <div>
+                        <button class="btn btn-outline-info" type="submit">Save</button>
+                    </div>
+            </div>
+            </form>
+
+    </section>
+</div>
+
+
+{% endblock content %}

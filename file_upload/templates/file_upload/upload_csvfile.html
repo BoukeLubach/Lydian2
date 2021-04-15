@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+
+    <!-- section begin -->
+    <section id="subheader" class="no-bottom" data-bgimage="url(images/background/5.png) bottom">
+        <div class="center-y relative text-center" data-scroll-speed="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="col-md-12 text-center">
+                            <h1>Upload csv</h1>
+                            <!-- <p>Awsome Page Teaser Here</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section close -->
+
+    <section class="no-top mt-4">
+        <div class="container">
+
+            <div class="content-section col-md-4 offset-4 mt-4">
+                <fieldset>
+                    <form enctype="multipart/form-data" method="POST">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+        
+                            {{ form|crispy }}
+                        </fieldset>
+                        <div class="form-group">
+                            <button class="btn btn-outline-info" type="submit">Save</button>
+                        </div>
+                    </form>
+
+                </fieldset>
+
+
+    </section>
+</div>
+
+{% endblock content %}

@@ -6,6 +6,7 @@ from .dash_apps.customgraphscripts import createxy, simpleScatter, timeseries
 import plotly.offline as opy
 import plotly.graph_objs as go
 from os import path
+from file_upload.models import Tagmodel
 
 
 
@@ -65,3 +66,18 @@ def introPageView(request):
 
     return render(request, 'kmApps/intro_page.html', context=context)
 
+
+
+
+def kmeans_analysis_view(request):
+
+    if request.method =="POST":
+        print(request.POST.get('tagselector'))
+
+    available_tags = Tagmodel.objects.all()
+    
+    context = {
+        'available_tags': available_tags,
+    }
+
+    return render(request, 'kmApps/kmeans_analysis.html', context = context)

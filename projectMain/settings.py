@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     #custom apps
     'users',
     'kmApps',
+    'file_upload',
 
     #third party apps
     'crispy_forms',

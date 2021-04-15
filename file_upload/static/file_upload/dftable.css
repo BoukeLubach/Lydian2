@@ -1,0 +1,282 @@
+.dataframe {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529
+}
+
+.dataframe td, .dataframe th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6
+}
+
+.dataframe thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6
+}
+
+.dataframe tbody+tbody {
+    border-top: 2px solid #dee2e6
+}
+
+.dataframe-sm td, .dataframe-sm th {
+    padding: .3rem
+}
+
+.dataframe-bordered {
+    border: 1px solid #dee2e6
+}
+
+.dataframe-bordered td, .dataframe-bordered th {
+    border: 1px solid #dee2e6
+}
+
+.dataframe-bordered thead td, .dataframe-bordered thead th {
+    border-bottom-width: 2px
+}
+
+.dataframe-borderless tbody+tbody, .dataframe-borderless td, .dataframe-borderless th, .dataframe-borderless thead th {
+    border: 0
+}
+
+.dataframe-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, .05)
+}
+
+.dataframe-hover tbody tr:hover {
+    color: #212529;
+    background-color: rgba(0, 0, 0, .075)
+}
+
+.dataframe-primary, .dataframe-primary>td, .dataframe-primary>th {
+    background-color: #b8daff
+}
+
+.dataframe-primary tbody+tbody, .dataframe-primary td, .dataframe-primary th, .dataframe-primary thead th {
+    border-color: #7abaff
+}
+
+.dataframe-hover .dataframe-primary:hover {
+    background-color: #9fcdff
+}
+
+.dataframe-hover .dataframe-primary:hover>td, .dataframe-hover .dataframe-primary:hover>th {
+    background-color: #9fcdff
+}
+
+.dataframe-secondary, .dataframe-secondary>td, .dataframe-secondary>th {
+    background-color: #d6d8db
+}
+
+.dataframe-secondary tbody+tbody, .dataframe-secondary td, .dataframe-secondary th, .dataframe-secondary thead th {
+    border-color: #b3b7bb
+}
+
+.dataframe-hover .dataframe-secondary:hover {
+    background-color: #c8cbcf
+}
+
+.dataframe-hover .dataframe-secondary:hover>td, .dataframe-hover .dataframe-secondary:hover>th {
+    background-color: #c8cbcf
+}
+
+.dataframe-success, .dataframe-success>td, .dataframe-success>th {
+    background-color: #c3e6cb
+}
+
+.dataframe-success tbody+tbody, .dataframe-success td, .dataframe-success th, .dataframe-success thead th {
+    border-color: #8fd19e
+}
+
+.dataframe-hover .dataframe-success:hover {
+    background-color: #b1dfbb
+}
+
+.dataframe-hover .dataframe-success:hover>td, .dataframe-hover .dataframe-success:hover>th {
+    background-color: #b1dfbb
+}
+
+.dataframe-info, .dataframe-info>td, .dataframe-info>th {
+    background-color: #bee5eb
+}
+
+.dataframe-info tbody+tbody, .dataframe-info td, .dataframe-info th, .dataframe-info thead th {
+    border-color: #86cfda
+}
+
+.dataframe-hover .dataframe-info:hover {
+    background-color: #abdde5
+}
+
+.dataframe-hover .dataframe-info:hover>td, .dataframe-hover .dataframe-info:hover>th {
+    background-color: #abdde5
+}
+
+.dataframe-warning, .dataframe-warning>td, .dataframe-warning>th {
+    background-color: #ffeeba
+}
+
+.dataframe-warning tbody+tbody, .dataframe-warning td, .dataframe-warning th, .dataframe-warning thead th {
+    border-color: #ffdf7e
+}
+
+.dataframe-hover .dataframe-warning:hover {
+    background-color: #ffe8a1
+}
+
+.dataframe-hover .dataframe-warning:hover>td, .dataframe-hover .dataframe-warning:hover>th {
+    background-color: #ffe8a1
+}
+
+.dataframe-danger, .dataframe-danger>td, .dataframe-danger>th {
+    background-color: #f5c6cb
+}
+
+.dataframe-danger tbody+tbody, .dataframe-danger td, .dataframe-danger th, .dataframe-danger thead th {
+    border-color: #ed969e
+}
+
+.dataframe-hover .dataframe-danger:hover {
+    background-color: #f1b0b7
+}
+
+.dataframe-hover .dataframe-danger:hover>td, .dataframe-hover .dataframe-danger:hover>th {
+    background-color: #f1b0b7
+}
+
+.dataframe-light, .dataframe-light>td, .dataframe-light>th {
+    background-color: #fdfdfe
+}
+
+.dataframe-light tbody+tbody, .dataframe-light td, .dataframe-light th, .dataframe-light thead th {
+    border-color: #fbfcfc
+}
+
+.dataframe-hover .dataframe-light:hover {
+    background-color: #ececf6
+}
+
+.dataframe-hover .dataframe-light:hover>td, .dataframe-hover .dataframe-light:hover>th {
+    background-color: #ececf6
+}
+
+.dataframe-dark, .dataframe-dark>td, .dataframe-dark>th {
+    background-color: #c6c8ca
+}
+
+.dataframe-dark tbody+tbody, .dataframe-dark td, .dataframe-dark th, .dataframe-dark thead th {
+    border-color: #95999c
+}
+
+.dataframe-hover .dataframe-dark:hover {
+    background-color: #b9bbbe
+}
+
+.dataframe-hover .dataframe-dark:hover>td, .dataframe-hover .dataframe-dark:hover>th {
+    background-color: #b9bbbe
+}
+
+.dataframe-active, .dataframe-active>td, .dataframe-active>th {
+    background-color: rgba(0, 0, 0, .075)
+}
+
+.dataframe-hover .dataframe-active:hover {
+    background-color: rgba(0, 0, 0, .075)
+}
+
+.dataframe-hover .dataframe-active:hover>td, .dataframe-hover .dataframe-active:hover>th {
+    background-color: rgba(0, 0, 0, .075)
+}
+
+.dataframe .thead-dark th {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #454d55
+}
+
+.dataframe .thead-light th {
+    color: #495057;
+    background-color: #e9ecef;
+    border-color: #dee2e6
+}
+
+.dataframe-dark {
+    color: #fff;
+    background-color: #343a40
+}
+
+.dataframe-dark td, .dataframe-dark th, .dataframe-dark thead th {
+    border-color: #454d55
+}
+
+.dataframe-dark.dataframe-bordered {
+    border: 0
+}
+
+.dataframe-dark.dataframe-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, .05)
+}
+
+.dataframe-dark.dataframe-hover tbody tr:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .075)
+}
+
+@media (max-width:575.98px) {
+    .dataframe-responsive-sm {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch
+    }
+    .dataframe-responsive-sm>.dataframe-bordered {
+        border: 0
+    }
+}
+
+@media (max-width:767.98px) {
+    .dataframe-responsive-md {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch
+    }
+    .dataframe-responsive-md>.dataframe-bordered {
+        border: 0
+    }
+}
+
+@media (max-width:991.98px) {
+    .dataframe-responsive-lg {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch
+    }
+    .dataframe-responsive-lg>.dataframe-bordered {
+        border: 0
+    }
+}
+
+@media (max-width:1199.98px) {
+    .dataframe-responsive-xl {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch
+    }
+    .dataframe-responsive-xl>.dataframe-bordered {
+        border: 0
+    }
+}
+
+.dataframe-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch
+}
+
+.dataframe-responsive>.dataframe-bordered {
+    border: 0
+}
