@@ -10,24 +10,27 @@ from random import randrange
 from .k_means_functions import load_data_csv, cluster_distance, mode_assign
 from plotly.subplots import make_subplots
 from django_plotly_dash import DjangoDash
-
+from django.conf import settings
 import os
 
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "projectMain.settings")
+from file_upload.models import Datafile
 
 
-script_dir = os.path.dirname(__file__)
+datafile = Datafile.objects.get(id=4)
+
+
+file_path = os.path.join(settings.MEDIA_ROOT, datafile.csvfile.name)
 
 
 
-file_path = os.path.join(script_dir, 'data/distillationcolumn_okt.csv')
-df = load_data_csv([file_path])
+df = pd.read_csv(file_path, dayfirst=True, sep=";", skiprows=[1,2])
+# df = df.apply(pd.to_numeric, errors="coerce")
+df = df.drop(df.columns[0], axis=1)
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-
-app = DjangoDash('kmDistanceApp', external_stylesheets=external_stylesheets)
-
-
+app = DjangoDash('kmAnalysis', external_stylesheets=external_stylesheets)
 app_local = dash.Dash()
 
 tags = df.columns
@@ -37,7 +40,7 @@ app.layout = html.Div([
                 dcc.Dropdown(
                     id='tag-selection-dropdown',
                     options=[{'label':tag, 'value':tag} for tag in tags],
-                    value=['Feed flow', 'Reflux flow', 'Hot oil flow'],
+                    value=[tags[1], tags[2]],
                     multi=True
                 ),
             ], id='tag-selection-container', className = 'box'),
@@ -70,7 +73,9 @@ app.layout = html.Div([
 @app.callback(Output('cluster-distance-graph','figure'),
             [Input('tag-selection-dropdown','value'),])
 def create_cluster_distance(tags): 
+    print("test")
     distance = cluster_distance(df[tags])
+
     trace = go.Scatter(
         x = list(range(1, len(distance)+1)),
         y = distance

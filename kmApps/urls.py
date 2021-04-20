@@ -1,7 +1,7 @@
 from django.urls import path
 
 from .views import introPageView, kmeans_analysis_view, kmDistanceView
-from kmApps.dash_apps import kmDistanceApp
+from kmApps.dash_apps import kmDistanceApp, kmAnalysis
 
 urlpatterns = [
     path('intro/', introPageView, name='intro-page'),
