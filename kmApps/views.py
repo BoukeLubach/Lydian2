@@ -116,3 +116,9 @@ def kmeans_analysis_view(request):
         context['tsgraph'] = tsgraph
     
     return render(request, 'kmApps/kmeans_analysis.html', context = context)
+
+
+def kmDistanceView(request):
+
+
+    return render(request, "kmApps/kmdistance.html" ,context={})
