@@ -18,7 +18,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "projectMain.settings")
 from file_upload.models import Datafile
 
 
-datafile = Datafile.objects.get(id=4)
+datafile = Datafile.objects.get(id=7)
 
 
 file_path = os.path.join(settings.MEDIA_ROOT, datafile.csvfile.name)
@@ -26,7 +26,8 @@ file_path = os.path.join(settings.MEDIA_ROOT, datafile.csvfile.name)
 
 
 df = pd.read_csv(file_path, dayfirst=True, sep=";", skiprows=[1,2])
-# df = df.apply(pd.to_numeric, errors="coerce")
+df = df.apply(pd.to_numeric, errors="coerce")
+df = df.where(pd.notnull(df), None)
 df = df.drop(df.columns[0], axis=1)
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -73,7 +74,7 @@ app.layout = html.Div([
 @app.callback(Output('cluster-distance-graph','figure'),
             [Input('tag-selection-dropdown','value'),])
 def create_cluster_distance(tags): 
-    print("test")
+
     distance = cluster_distance(df[tags])
 
     trace = go.Scatter(

@@ -77,7 +77,7 @@ def kmeans_analysis_view(request):
         'available_tags': available_tags,
     }
 
-    return render(request, "kmApps/kmExample.html" ,context=context)
+    return render(request, "kmApps/kmAnalysis.html" ,context=context)
 
 def kmDistanceView(request):
     available_tags = Tagmodel.objects.all()
